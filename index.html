@@ -81,10 +81,14 @@
   $("ol").append($("<li>").text("It'a a cute puppy!"));
   $("aside").empty().append($("<p>").text("Sorry for making the list exist!"));
   function change(evt) {
-    $("body").css("backgorund-color", $(".col-sm-4").rgb());
+    let $rgbInputs = $('.form-control');
+    let [r, g, b] = [...$rgbInputs];
+    $("body").css("background-color", `rgb(${r.value}, ${g.value}, ${b.value})`);
   }
 
-  $("").
+  $('.form-control').on('change', change);
+
+  $('img').on('click', () => $('img').remove());
 </script>
 </body>
 
