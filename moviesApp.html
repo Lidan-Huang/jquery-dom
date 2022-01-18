@@ -22,7 +22,21 @@
   $form.append($("<button id='submitForm'> Submit</button>"));
   $("body").append($form);
 
-  $
+  function submitRating(evt){
+    evt.preventDefault();
+
+    let movieTitle = $("#movieTitle").val();
+    let movieRating = $("#movieRate").val();
+    let $ratingRow = $("<div>").addClass('Rating-row');
+    let $ratingRowTitle = $('<span>').addClass('Rating-row-title').text(`${movieTitle}`);
+    let $ratingRowRating = $('<span>').addClass('Rating-row-rating').text(`${movieRating}`);
+      $ratingRow.append($ratingRowTitle);
+      $ratingRow.append($ratingRowRating);
+      $('body').append($ratingRow);
+  }
+
+  $('#submitForm').on('click', submitRating);
+  
  
 </script>
 </body>
