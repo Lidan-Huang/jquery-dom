@@ -32,12 +32,13 @@
     let $ratingRowRating = $('<span>').addClass('Rating-row-rating').text(`${movieRating}`);
       $ratingRow.append($ratingRowTitle);
       $ratingRow.append($ratingRowRating);
+      $ratingRow.append("<button class='removeSubmit'>Remove</button>");
       $('body').append($ratingRow);
   }
 
   $('#submitForm').on('click', submitRating);
+  $('body').on('click', ".Rating-row button",(evt) => $(evt.target).parent().remove());
   
- 
 </script>
 </body>
 
